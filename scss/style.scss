@@ -26,13 +26,33 @@ p {
   max-width: 1170px;
   padding: 15px;
 }
+.section {
+  @include paddingsTB(60px, 70px);
+}
+.section__title {
+  @include fontProps(3.6rem, 300, $gray);
+  text-align: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 378px;
+    height: 1px;
+    left: 50%;
+    background-color: $mainColor;
+    bottom: -30px;
+    transform: translateX(-50%);
+  }
+}
+//buttons, links
+.btn:hover {
+  background-color: lighten($mainColor, 5%);
+}
 a,
 button,
 input {
   transition: all 0.2s;
-}
-.section__title {
-  @include fontProps(3.6rem, 300, $gray);
 }
 //header
 .header {
@@ -137,6 +157,7 @@ input {
   border-radius: 25px;
   height: 50px;
   margin-bottom: 21px;
+  z-index: 1;
 }
 .form_bottom {
   width: 100%;
@@ -148,9 +169,6 @@ input {
   @include noBorder;
   @include marginLR(auto);
   border-radius: 30px;
-  &:hover {
-    background-color: lighten($mainColor, 5%);
-  }
 }
 .form__line_left,
 .form__line_right {
@@ -200,3 +218,20 @@ input {
   cursor: pointer;
 }
 //services
+.services__title {
+  margin-bottom: 66px;
+}
+.services__h3 {
+  @include fontProps(2.8rem, 300, $mainColor);
+  margin-bottom: 19px;
+}
+.services__text {
+  @include fontProps(1.8rem, 300, $gray);
+  margin-bottom: 29px;
+}
+.services__btn {
+  @include noBorder;
+  @include button(180px, 50px, $mainColor);
+  @include fontProps(1.4rem, 400, #fff);
+  border-radius: 25px;
+}
