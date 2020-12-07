@@ -1,3 +1,5 @@
+@import "mixins", "variables";
+
 //general
 html {
   font-size: 10px;
@@ -5,9 +7,26 @@ html {
 body {
   font-family: "Roboto", sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+p {
+  font-size: 1.4rem;
+}
 .container {
   max-width: 1170px;
   padding: 15px;
+}
+a,
+button,
+input {
+  transition: all 0.2s;
 }
 .section__title {
   @include fontProps(3.6rem, 300, $gray);
@@ -15,4 +34,125 @@ body {
 //header
 .header {
   background: url(../img/header/header-bg.webp) no-repeat center center;
+  color: #fff;
+}
+.header__top {
+  @include paddingsTB(30px);
+}
+.logo {
+  @include fontProps(2.8rem, 900);
+  position: relative;
+  padding-left: 70px;
+  &::before {
+    content: url(../img/header/logo.png);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.header__phone {
+  margin-right: 13px;
+}
+.header__contact_text {
+  @include fontProps(1.2rem, 300);
+}
+.header__contact_phone {
+  @include fontProps(2.1rem, 500);
+}
+.header__menu {
+  @include noBorder;
+  background-color: transparent;
+  margin-left: 60px;
+  cursor: pointer;
+}
+.header__menu_icon {
+  height: 21px;
+  margin-bottom: 9px;
+}
+.menu_icon {
+  @include widthHeight(45px, 3px);
+  background-color: #fff;
+  position: relative;
+  display: block;
+  &::before {
+    content: "";
+    display: block;
+    position: relative;
+    left: 0;
+    top: -9px;
+    background-color: #fff;
+    @include widthHeight(45px, 3px);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: relative;
+    left: 0;
+    bottom: -6px;
+    background-color: #fff;
+    @include widthHeight(45px, 3px);
+  }
+}
+.menu__text {
+  text-align: center;
+  text-transform: uppercase;
+  @include fontProps(1.2rem, 500, #fff);
+}
+.header__main {
+  text-align: center;
+  padding-top: 35px;
+}
+.header__title {
+  @include fontProps(4.8rem, 700);
+  line-height: 4.4rem;
+  margin-bottom: 45px;
+  span {
+    font-size: 3.6rem;
+  }
+}
+.header__subtitle {
+  @include fontProps(2.2rem, 300);
+  margin-bottom: 50px;
+}
+.header__form {
+  margin: 0 auto 23px;
+  width: 100%;
+  max-width: 900px;
+  .row {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+.header__input {
+  @include noBorder;
+  @include marginLR(5px);
+  @include paddingsLR(25px);
+  @include fontProps(1.3rem, 300, $gray);
+  width: 100%;
+  max-width: 290px;
+  border-radius: 25px;
+  height: 50px;
+  margin-bottom: 21px;
+}
+.header__form_btn {
+  @include button(230px, 60px, $mainColor);
+  @include fontProps(1.6rem, 500);
+  @include noBorder;
+  @include marginLR(auto);
+  border-radius: 30px;
+  &:hover {
+    background-color: lighten($mainColor, 5%);
+  }
+}
+.header__text {
+  @include fontProps(1.4rem, 300);
+  margin-bottom: 80px;
+  text-align: center;
+}
+.header_button {
+  @include noBorder;
+  background-color: transparent;
+  margin: 0 auto;
+  cursor: pointer;
 }
