@@ -22,6 +22,9 @@ p {
 p {
   font-size: 1.4rem;
 }
+.subtitle {
+  text-align: center;
+}
 .container {
   max-width: 1170px;
   padding: 15px;
@@ -58,6 +61,7 @@ input {
 .header {
   background: url(../img/header/header-bg.webp) no-repeat center center;
   color: #fff;
+  background-size: cover;
 }
 .header__top {
   @include paddingsTB(30px);
@@ -234,4 +238,127 @@ input {
   @include button(180px, 50px, $mainColor);
   @include fontProps(1.4rem, 400, #fff);
   border-radius: 25px;
+}
+//calculate
+.calculate {
+  background: url(../img/calculate-bg.webp) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+.calculate__title {
+  margin-bottom: 55px;
+  color: #fff;
+  &::after {
+    background-color: #fff;
+  }
+}
+.calculate__subtitle {
+  @include fontProps(2.6rem, 300);
+  margin-bottom: 44px;
+}
+.calc__slider,
+.calc__plan {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 100%;
+  padding: 24px 22px;
+}
+.calc__slider {
+  margin-bottom: 8px;
+}
+.calc__point {
+  position: absolute;
+}
+.calc__text,
+.plan__text {
+  font-size: 2rem;
+}
+.calc__text {
+  margin-bottom: 54px;
+}
+.calc__bar {
+  width: 100%;
+  position: relative;
+  height: 8px;
+}
+.calc__point {
+  @include widthHeight(18px);
+  border-radius: 9px;
+  background-color: #fff;
+  position: absolute;
+  top: -5px;
+  &::before {
+    color: #fff;
+    font-size: 1.6rem;
+    top: -25px;
+    position: absolute;
+    white-space: nowrap;
+  }
+}
+.calc__point_1 {
+  left: 0;
+  &::before {
+    content: "100м\00B2";
+  }
+}
+.calc__point_2 {
+  left: 33%;
+  &::before {
+    content: "10 000м\00B2";
+    transform: translateX(-35%);
+  }
+}
+.calc__point_3 {
+  left: 66%;
+  &::before {
+    content: "250 000м\00B2";
+    transform: translateX(-30%);
+  }
+}
+.calc__point_4 {
+  right: 0;
+  &::before {
+    right: 0;
+    content: "500 000м\00B2";
+  }
+}
+.calc__range {
+  z-index: 5;
+  position: absolute;
+  @include noBorder;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 8px;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  border-radius: 4px;
+}
+.calc__range::-webkit-slider-thumb {
+  @include calcSlider;
+}
+.calc__range::-moz-range-thumb {
+  @include calcSlider;
+}
+.plan__text {
+  margin-bottom: 23px;
+}
+.plan__buttons {
+  width: 100%;
+}
+.plan__btn {
+  @include button(100%, 45px, transparent);
+  @include marginLR(7px);
+  border-radius: 3px;
+  border: 1px solid #fff;
+  outline: none;
+  font-size: 1.6rem;
+  color: #fff;
+  &:hover {
+    background-color: $mainColor;
+    border-color: $mainColor;
+  }
+}
+//right
+.calculate_right {
+  text-align: center;
 }

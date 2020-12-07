@@ -49,3 +49,13 @@
   border: none;
   outline: none;
 }
+//calc slider
+@mixin calcSlider {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 9px solid $mainColor;
+  cursor: pointer;
+}
