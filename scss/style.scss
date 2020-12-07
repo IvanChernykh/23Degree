@@ -7,6 +7,9 @@ html {
 body {
   font-family: "Roboto", sans-serif;
 }
+* {
+  box-sizing: border-box;
+}
 h1,
 h2,
 h3,
@@ -135,6 +138,10 @@ input {
   height: 50px;
   margin-bottom: 21px;
 }
+.form_bottom {
+  width: 100%;
+  position: relative;
+}
 .header__form_btn {
   @include button(230px, 60px, $mainColor);
   @include fontProps(1.6rem, 500);
@@ -143,6 +150,42 @@ input {
   border-radius: 30px;
   &:hover {
     background-color: lighten($mainColor, 5%);
+  }
+}
+.form__line_left,
+.form__line_right {
+  position: absolute;
+  top: -70%;
+  width: 348px;
+  height: 78px;
+  border-bottom: 1px solid rgba($color: #fff, $alpha: 0.4);
+}
+.form__line_left {
+  border-left: 1px solid rgba($color: #fff, $alpha: 0.4);
+  left: -25px;
+  &::after {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba($color: #fff, $alpha: 0.4);
+  }
+}
+.form__line_right {
+  border-right: 1px solid rgba($color: #fff, $alpha: 0.4);
+  right: -25px;
+  &::after {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba($color: #fff, $alpha: 0.4);
   }
 }
 .header__text {
@@ -156,3 +199,4 @@ input {
   margin: 0 auto;
   cursor: pointer;
 }
+//services
