@@ -30,7 +30,7 @@ p {
   padding: 0 15px;
 }
 .section {
-  @include paddingsTB(60px, 70px);
+  @include paddingsTB(45px, 70px);
 }
 .section__title {
   @include fontProps(3.6rem, 300, $gray);
@@ -44,7 +44,7 @@ p {
     height: 1px;
     left: 50%;
     background-color: $mainColor;
-    bottom: -30px;
+    bottom: -21px;
     transform: translateX(-50%);
   }
 }
@@ -63,9 +63,10 @@ input {
   background: url(../img/header/header-bg.webp) no-repeat center center;
   color: #fff;
   background-size: cover;
+  padding-bottom: 53px;
 }
 .header__top {
-  @include paddingsTB(30px);
+  @include paddingsTB(45px, 30px);
 }
 .logo {
   @include fontProps(2.8rem, 900);
@@ -91,7 +92,7 @@ input {
 .header__menu {
   @include noBorder;
   background-color: transparent;
-  margin-left: 60px;
+  margin-left: 80px;
   cursor: pointer;
 }
 .header__menu_icon {
@@ -129,22 +130,22 @@ input {
 }
 .header__main {
   text-align: center;
-  padding-top: 35px;
+  padding-top: 41px;
 }
 .header__title {
   @include fontProps(4.8rem, 700);
   line-height: 4.4rem;
-  margin-bottom: 45px;
+  margin-bottom: 31px;
   span {
     font-size: 3.6rem;
   }
 }
 .header__subtitle {
   @include fontProps(2.2rem, 300);
-  margin-bottom: 50px;
+  margin-bottom: 46px;
 }
 .header__form {
-  margin: 0 auto 23px;
+  margin: 0 auto 21px;
   width: 100%;
   max-width: 900px;
   .row {
@@ -213,7 +214,7 @@ input {
 }
 .header__text {
   @include fontProps(1.4rem, 300);
-  margin-bottom: 80px;
+  margin-bottom: 75px;
   text-align: center;
 }
 .header_button {
@@ -223,11 +224,18 @@ input {
   cursor: pointer;
 }
 //services
+.services {
+  padding-top: 55px;
+  padding-bottom: 56px;
+}
 .services__title {
-  margin-bottom: 66px;
+  margin-bottom: 58px;
 }
 .services__img {
   max-width: 100%;
+}
+.services__item {
+  margin-bottom: 16px;
 }
 .services__h3 {
   @include fontProps(2.8rem, 300, $mainColor);
@@ -248,9 +256,10 @@ input {
   background: url(../img/calculate-bg.webp) no-repeat center center;
   background-size: cover;
   color: #fff;
+  padding-bottom: 57px;
 }
 .calculate__title {
-  margin-bottom: 55px;
+  margin-bottom: 43px;
   color: #fff;
   &::after {
     background-color: #fff;
@@ -258,17 +267,21 @@ input {
 }
 .calculate__subtitle {
   @include fontProps(2.6rem, 300);
-  margin-bottom: 44px;
+  margin-bottom: 37px;
 }
 .calc__slider,
 .calc__plan {
   border: 1px solid #fff;
   border-radius: 4px;
   width: 100%;
-  padding: 24px 22px;
+  padding: 17px 22px;
+}
+.calc__plan {
+  padding-bottom: 24px;
 }
 .calc__slider {
   margin-bottom: 8px;
+  padding-bottom: 28px;
 }
 .calc__point {
   position: absolute;
@@ -278,7 +291,7 @@ input {
   font-size: 2rem;
 }
 .calc__text {
-  margin-bottom: 54px;
+  margin-bottom: 51px;
 }
 .calc__bar {
   width: 100%;
@@ -345,13 +358,13 @@ input {
   @include calcSlider;
 }
 .plan__text {
-  margin-bottom: 23px;
+  margin-bottom: 19px;
 }
 .plan__buttons {
   width: 100%;
 }
 .plan__btn {
-  @include button(100%, 45px, transparent);
+  @include button(100%, 41px, transparent);
   @include marginLR(7px);
   border-radius: 3px;
   border: 1px solid #fff;
@@ -425,7 +438,7 @@ input {
 .calculate__value {
   font-size: 3.2rem;
   display: block;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 .calculate__button {
   @include button(100%, 50px, $mainColor);
@@ -433,17 +446,22 @@ input {
   color: #fff;
   max-width: 310px;
   border-radius: 25px;
-  margin: 0 auto 25px;
+  margin: 33px auto 20px;
 }
 .calculate__phone {
   @include fontProps(1.4rem, 300);
   span {
     @include fontProps(1.8rem, 500);
+    line-height: 180%;
   }
 }
 //portfolio
+.portfolio {
+  padding-top: 45px;
+  padding-bottom: 21px;
+}
 .portfolio__title {
-  margin-bottom: 55px;
+  margin-bottom: 48px;
 }
 .portfolio__buttons {
   border: 1px solid $mainColor;
@@ -457,7 +475,7 @@ input {
   @include fontProps(1.4rem, 300, $mainColor);
   @include paddingsLR(36px);
   text-align: center;
-  line-height: 47px;
+  line-height: 42px;
   background-color: transparent;
   cursor: pointer;
   text-transform: uppercase;
@@ -471,10 +489,10 @@ input {
     position: absolute;
     display: block;
     width: 1px;
-    height: 45px;
+    height: 40px;
     background-color: $mainColor;
     left: 0;
-    bottom: 2px;
+    bottom: 1px;
   }
 }
 .portfolio__btn.active {
@@ -497,16 +515,19 @@ input {
 //advantages
 .advantages {
   background-color: $bgColor;
+  padding-top: 45px;
+  padding-bottom: 38px;
 }
 .advantages__title {
   margin-bottom: 47px;
 }
 .advantages__item {
   text-align: center;
+  margin-bottom: 36px;
 }
 .advantages__icon {
   width: 128px;
-  height: 90px;
+  height: 80px;
   @include flexCenter;
   margin: 0 auto 24px;
   border-bottom: 1px solid $mainColor;
@@ -515,12 +536,18 @@ input {
   @include fontProps(1.4rem, 500, $gray);
 }
 //interaction
+.interaction {
+  @include paddingsTB(63px, 67px);
+}
 .interaction__title {
-  margin-bottom: 60px;
+  margin-bottom: 52px;
 }
 div.interaction__item {
   padding: 0;
   @include flexCenter;
+}
+.interaction-row {
+  @include paddingsLR(15px);
 }
 .interaction__img {
   width: 100%;
@@ -532,6 +559,7 @@ div.interaction__item {
 //companies
 .companies {
   background-color: $bgColor;
+  padding-bottom: 62px;
 }
 .companies__title {
   margin-bottom: 60px;
@@ -559,18 +587,21 @@ div.interaction__item {
   @include companiesSlider;
 }
 //team
+.team {
+  padding-top: 53px;
+}
 .team__title {
-  margin-bottom: 70px;
+  margin-bottom: 64px;
 }
 .team__items {
-  margin-bottom: 20px;
+  margin-bottom: 34px;
 }
 .team__item {
   text-align: center;
   margin-bottom: 50px;
 }
 .team__img {
-  margin: 0 auto 22px;
+  margin: 0 auto 13px;
   max-width: 225px;
   width: 100%;
   img {
@@ -580,7 +611,7 @@ div.interaction__item {
 }
 .team__name {
   @include fontProps(2.4rem, 300, $mainColor);
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 .team__position {
   @include fontProps(1.6rem, 300, $gray);
@@ -606,12 +637,13 @@ div.interaction__item {
 }
 .quote__title {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 300;
 }
 .quote__text {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  max-width: 960px;
+  margin: 0 auto 23px;
 }
 .quote__author {
   font-size: 1.8rem;
@@ -625,7 +657,7 @@ div.interaction__item {
   background-color: $bgColor;
 }
 .blog__title {
-  margin-bottom: 64px;
+  margin-bottom: 52px;
 }
 .blog__item {
   text-align: center;
@@ -650,22 +682,23 @@ div.interaction__item {
 }
 .contacts__title {
   color: #fff;
-  margin-bottom: 54px;
+  margin-bottom: 44px;
   &::after {
     background: #fff;
   }
 }
 .contacts__subtitle {
-  margin-bottom: 50px;
+  margin-bottom: 43px;
   font-size: 2.6rem;
   font-weight: 300;
 }
 .contacts__input,
 .contacts__textarea {
   @include fontProps(1.3rem, 300, $gray);
-  padding: 19px 20px;
+  padding: 17px 20px;
   width: 100%;
   border-radius: 6px;
+  resize: none;
 }
 .contacts__input {
   margin-bottom: 15px;
@@ -692,9 +725,9 @@ div.interaction__item {
 .contacts__info {
   font-size: 1.8rem;
   font-weight: 500;
-  margin-bottom: 29px;
+  margin-bottom: 22px;
   position: relative;
-  padding-left: 42px;
+  padding-left: 41px;
   &::before {
     @include flexCenter;
     @include widthHeight(27px);
@@ -718,8 +751,11 @@ div.interaction__item {
 .info_skype::before {
   content: url(../img/contacts/skype.png);
 }
-.info_telegram::before {
-  content: url(../img/contacts/telegram.png);
+.info_telegram {
+  margin-bottom: 31px;
+  &::before {
+    content: url(../img/contacts/telegram.png);
+  }
 }
 .contacts__schedule {
   font-size: 1.6rem;
@@ -747,7 +783,7 @@ div.interaction__item {
   padding: 0;
 }
 .footer__top {
-  @include paddingsTB(40px, 50px);
+  @include paddingsTB(40px, 15px);
 }
 .footer__link {
   color: #fff;
