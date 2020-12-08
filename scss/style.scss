@@ -490,3 +490,23 @@ input {
   width: 100%;
   height: 100%;
 }
+//advantages
+.advantages {
+  background-color: $bgColor;
+}
+.advantages__title {
+  margin-bottom: 47px;
+}
+.advantages__item {
+  text-align: center;
+}
+.advantages__icon {
+  width: 128px;
+  height: 90px;
+  @include flexCenter;
+  margin: 0 auto 24px;
+  border-bottom: 1px solid $mainColor;
+}
+.advantages__text {
+  @include fontProps(1.4rem, 500, $gray);
+}
