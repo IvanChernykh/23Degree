@@ -63,3 +63,10 @@
   opacity: 1;
   transition: 0.5s 1s;
 }
+@mixin portfolioBtn {
+  color: #fff;
+  background-color: $mainColor;
+  border-radius: 6px;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
