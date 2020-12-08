@@ -52,6 +52,8 @@
 //calculate
 @mixin calcSlider {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -69,4 +71,13 @@
   border-radius: 6px;
   transform: scale(1.1);
   -webkit-transform: scale(1.1);
+}
+@mixin companiesSlider {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width: 32px;
+  height: 11px;
+  background: url(../img/companies/slider-icon.png) no-repeat center center;
 }

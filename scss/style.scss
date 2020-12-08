@@ -330,6 +330,7 @@ input {
   width: 100%;
   appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
   height: 8px;
   background-color: rgba($color: #fff, $alpha: 0.5);
   border-radius: 4px;
@@ -524,4 +525,33 @@ div.interaction__item {
 }
 .interaction__h3 {
   @include fontProps(3rem, 300, $gray);
+}
+//companies
+.companies {
+  background-color: $bgColor;
+}
+.companies__title {
+  margin-bottom: 60px;
+}
+.companies__slider {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.company__img {
+  @include marginLR(15px);
+}
+.companies__slider-range {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 5px;
+  background-color: #e3e7e8;
+  border-radius: 2px;
+}
+.companies__slider-range::-webkit-slider-thumb {
+  @include companiesSlider;
+}
+.companies__slider-range::-moz-range-thumb {
+  @include companiesSlider;
 }
