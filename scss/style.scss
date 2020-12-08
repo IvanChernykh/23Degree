@@ -555,3 +555,65 @@ div.interaction__item {
 .companies__slider-range::-moz-range-thumb {
   @include companiesSlider;
 }
+//team
+.team__title {
+  margin-bottom: 70px;
+}
+.team__items {
+  margin-bottom: 20px;
+}
+.team__item {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team__img {
+  margin: 0 auto 22px;
+  max-width: 225px;
+  width: 100%;
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+.team__name {
+  @include fontProps(2.4rem, 300, $mainColor);
+  margin-bottom: 15px;
+}
+.team__position {
+  @include fontProps(1.6rem, 300, $gray);
+}
+.team__quote {
+  position: relative;
+  text-align: center;
+  font-weight: 300;
+  color: $gray;
+  &::before {
+    content: url(../img/team/quote.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &::after {
+    content: url(../img/team/quote.png);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotateY(180deg);
+  }
+}
+.quote__title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.quote__text {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.quote__author {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.quote__author_position {
+  font-size: 1.6rem;
+}
