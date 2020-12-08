@@ -617,3 +617,22 @@ div.interaction__item {
 .quote__author_position {
   font-size: 1.6rem;
 }
+//blog
+.blog__title {
+  margin-bottom: 64px;
+}
+.blog__item {
+  text-align: center;
+}
+.blog__img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.blog__link {
+  @include fontProps(1.8rem, 300, $mainColor);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
