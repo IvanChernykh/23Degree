@@ -27,7 +27,7 @@ p {
 }
 .container {
   max-width: 1170px;
-  padding: 15px;
+  padding: 0 15px;
 }
 .section {
   @include paddingsTB(60px, 70px);
@@ -728,6 +728,7 @@ div.interaction__item {
 //map
 .map {
   background: #000;
+  height: 600px;
   iframe {
     opacity: 0.85;
     transition: 0.4s;
@@ -744,6 +745,9 @@ div.interaction__item {
 .footer_list {
   list-style-type: none;
   padding: 0;
+}
+.footer__top {
+  @include paddingsTB(40px, 50px);
 }
 .footer__link {
   color: #fff;
