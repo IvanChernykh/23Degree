@@ -49,7 +49,7 @@
   border: none;
   outline: none;
 }
-//calc slider
+//calculate
 @mixin calcSlider {
   appearance: none;
   width: 24px;
@@ -58,4 +58,8 @@
   background-color: #fff;
   border: 9px solid $mainColor;
   cursor: pointer;
+}
+@mixin btnTip {
+  opacity: 1;
+  transition: 0.5s 1s;
 }

@@ -56,6 +56,7 @@ a,
 button,
 input {
   transition: all 0.2s;
+  @include noBorder;
 }
 //header
 .header {
@@ -353,12 +354,86 @@ input {
   outline: none;
   font-size: 1.6rem;
   color: #fff;
+  position: relative;
   &:hover {
     background-color: $mainColor;
     border-color: $mainColor;
   }
 }
+.plan__btn_1:hover .btn__tip_1 {
+  @include btnTip;
+}
+.plan__btn_2:hover .btn__tip_2 {
+  @include btnTip;
+}
+.plan__btn_3:hover .btn__tip_3 {
+  @include btnTip;
+}
+.btn__tip {
+  position: absolute;
+  background-color: #fff;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  color: $gray;
+  width: 445px;
+  border-radius: 4px;
+  top: 130%;
+  pointer-events: none;
+  opacity: 0;
+  padding: 26px 30px;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-bottom: 25px solid #fff;
+    position: absolute;
+    top: -48px;
+  }
+}
+.btn__tip_1 {
+  left: 0;
+  &::before {
+    left: 68px;
+  }
+}
+.btn__tip_2 {
+  left: 50%;
+  transform: translateX(-50%);
+  &::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.btn__tip_3 {
+  right: 0;
+  &::before {
+    right: 68px;
+  }
+}
 //right
 .calculate_right {
   text-align: center;
+}
+.calculate__text {
+  font-size: 1.6rem;
+}
+.calculate__value {
+  font-size: 3.2rem;
+  display: block;
+  margin-bottom: 26px;
+}
+.calculate__button {
+  @include button(100%, 50px, $mainColor);
+  font-size: 1.4rem;
+  color: #fff;
+  max-width: 310px;
+  border-radius: 25px;
+  margin: 0 auto 25px;
+}
+.calculate__phone {
+  @include fontProps(1.4rem, 300);
+  span {
+    @include fontProps(1.8rem, 500);
+  }
 }
