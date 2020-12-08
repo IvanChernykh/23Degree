@@ -510,3 +510,18 @@ input {
 .advantages__text {
   @include fontProps(1.4rem, 500, $gray);
 }
+//interaction
+.interaction__title {
+  margin-bottom: 60px;
+}
+div.interaction__item {
+  padding: 0;
+  @include flexCenter;
+}
+.interaction__img {
+  width: 100%;
+  height: auto;
+}
+.interaction__h3 {
+  @include fontProps(3rem, 300, $gray);
+}
