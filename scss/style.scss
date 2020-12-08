@@ -618,6 +618,9 @@ div.interaction__item {
   font-size: 1.6rem;
 }
 //blog
+.blog {
+  background-color: $bgColor;
+}
 .blog__title {
   margin-bottom: 64px;
 }
@@ -635,4 +638,88 @@ div.interaction__item {
   &:hover {
     text-decoration: underline;
   }
+}
+//contacts
+.contacts {
+  background: url(../img/contacts/contact-bg.webp) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+}
+.contacts__title {
+  color: #fff;
+  margin-bottom: 54px;
+  &::after {
+    background: #fff;
+  }
+}
+.contacts__subtitle {
+  margin-bottom: 50px;
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+.contacts__input,
+.contacts__textarea {
+  @include fontProps(1.3rem, 300, $gray);
+  padding: 19px 20px;
+  width: 100%;
+  border-radius: 6px;
+}
+.contacts__input {
+  margin-bottom: 15px;
+}
+.input__wrapper {
+  @include paddingsLR(8px);
+  &:first-child {
+    padding-left: 15px;
+  }
+  &:last-child {
+    padding-right: 15px;
+  }
+}
+.contacts__textarea {
+  @include noBorder;
+
+  margin-bottom: 18px;
+}
+.contacts__button {
+  @include fontProps(1.5rem, 500, #fff);
+  @include button(213px, 56px, $mainColor);
+  border-radius: 27px;
+  margin: 0 auto;
+}
+.contacts__info {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 29px;
+  position: relative;
+  padding-left: 42px;
+  &::before {
+    @include flexCenter;
+    @include widthHeight(27px);
+    border-radius: 2px;
+    border: 1px solid #fff;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.info_phone::before {
+  content: url(../img/contacts/phone.png);
+}
+.info_whatapp::before {
+  content: url(../img/contacts/whatsapp.png);
+}
+.info_mail::before {
+  content: url(../img/contacts/message.png);
+}
+.info_skype::before {
+  content: url(../img/contacts/skype.png);
+}
+.info_telegram::before {
+  content: url(../img/contacts/telegram.png);
+}
+.contacts__schedule {
+  font-size: 1.6rem;
+  font-weight: 300;
 }
