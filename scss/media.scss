@@ -239,7 +239,7 @@
 }
 @media (max-width: 480px) {
   .dropdown-menu {
-    background-color: rgba(#000, 0.9);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.94) 100%);
   }
   .dropdown-close {
     width: 40%;
