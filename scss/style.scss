@@ -58,6 +58,50 @@ input {
   transition: all 0.2s;
   @include noBorder;
 }
+//dropdown-menu
+.dropdown-menu {
+  position: fixed;
+  z-index: 100;
+  width: 0%;
+  overflow: hidden;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.9) 35%,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  transition: width, 0.2s;
+}
+.dropdown-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 65%;
+}
+.dropdown-menu.active {
+  width: 100%;
+}
+.nav_ul {
+  padding: 60px 0;
+  margin: 0;
+}
+.nav__item {
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+.menu__link {
+  @include fontProps(2rem, 300, #fff);
+  text-decoration: none;
+  z-index: 200;
+  border-bottom: 1px solid transparent;
+  justify-self: start;
+  &:hover {
+    border-color: #fff;
+  }
+}
 //header
 .header {
   background: url(../img/header/header-bg.webp) no-repeat center center;
@@ -94,6 +138,7 @@ input {
   background-color: transparent;
   margin-left: 80px;
   cursor: pointer;
+  padding: 0;
 }
 .header__menu_icon {
   height: 21px;
@@ -321,14 +366,14 @@ input {
 .calc__point_2 {
   left: 33%;
   &::before {
-    content: "10 000м\00B2";
+    content: "3 400м\00B2";
     transform: translateX(-35%);
   }
 }
 .calc__point_3 {
   left: 66%;
   &::before {
-    content: "250 000м\00B2";
+    content: "6 900м\00B2";
     transform: translateX(-30%);
   }
 }
@@ -336,7 +381,7 @@ input {
   right: 0;
   &::before {
     right: 0;
-    content: "500 000м\00B2";
+    content: "10 000м\00B2";
   }
 }
 .calc__range {
@@ -376,6 +421,10 @@ input {
     background-color: $mainColor;
     border-color: $mainColor;
   }
+}
+.plan__btn.active {
+  background-color: $mainColor;
+  border-color: $mainColor;
 }
 .plan__btn_1:hover .btn__tip_1 {
   @include btnTip;

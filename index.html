@@ -13,8 +13,34 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body>
+    <div class="dropdown-menu">
+      <div class="dropdown-close"></div>
+      <div class="container">
+        <nav class="nav">
+          <ul class="nav_ul">
+            <li class="nav__item">
+              <a href="#" class="menu__link menu__link_services">Наши услуги</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="menu__link menu__link_calc">Расчитать стоимость</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="menu__link menu__link_portfolio">Портфолио</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="menu__link menu__link_team">Наша команда</a>
+            </li>
+            <li class="nav__item"><a href="#" class="menu__link menu__link_blog">Блог</a></li>
+            <li class="nav__item">
+              <a href="#" class="menu__link menu__link_contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <header class="header">
       <div class="container">
         <div class="header__top d-flex justify-content-between align-items-center">
@@ -141,7 +167,7 @@
             <div class="calc__slider">
               <p class="calc__text">Площадь помещения:</p>
               <div class="calc__bar">
-                <input type="range" class="calc__range" value="0" />
+                <input type="range" class="calc__range" value="1" min="1" />
                 <div class="calc__point calc__point_1"></div>
                 <div class="calc__point calc__point_2"></div>
                 <div class="calc__point calc__point_3"></div>
@@ -152,7 +178,7 @@
             <div class="calc__plan">
               <p class="plan__text">Выберите пакет:</p>
               <div class="plan__buttons d-flex justify-content-between">
-                <button class="plan__btn plan__btn_1">
+                <button class="plan__btn active plan__btn_1">
                   Light
                   <div class="btn__tip btn__tip_1">
                     <p>
@@ -185,11 +211,11 @@
           </div>
           <div class="col-lg-5 calculate_right">
             <p class="calculate__text">Площадь помещения:</p>
-            <span class="calculate__value">1 000м<sup>2</sup></span>
+            <span class="calculate__value"><span class="area__value">100</span>м<sup>2</sup></span>
             <p class="calculate__text">Средняя стоимость м<sup>2</sup>:</p>
-            <span class="calculate__value">4 850 грн.</span>
+            <span class="calculate__value"><span class="cost__value">250</span> грн.</span>
             <p class="calculate__text">Средняя стоимость объекта:</p>
-            <span class="calculate__value">48 500 грн.</span>
+            <span class="calculate__value"><span class="object__value">2750</span> грн.</span>
             <button class="calculate__button btn">Получить консультацию специалиста</button>
             <p class="calculate__phone">
               или позвоните нам по телефону: <br /><span>050 123 45 67</span>
