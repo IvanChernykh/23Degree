@@ -1,0 +1,250 @@
+@import "mixins", "variables";
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 9px;
+  }
+  //header
+  .header__title {
+    line-height: 4rem;
+    span {
+      font-size: 3.5rem;
+    }
+  }
+  .form__line_left,
+  .form__line_right {
+    display: none;
+  }
+  //calculate
+  .calculate_left {
+    margin-bottom: 40px;
+  }
+  //portfolio
+  .portfolio__buttons {
+    max-width: 675px;
+  }
+  .portfolio__btn {
+    @include paddingsLR(25px);
+  }
+  //companies
+  .companies {
+    padding-bottom: 45px;
+  }
+  //team
+  .team__img {
+    max-width: 160px;
+  }
+  .team__quote::before,
+  .team__quote::after {
+    width: 40px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
+  .services,
+  .calculate,
+  .portfolio,
+  .team,
+  .contacts,
+  .blog {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  //header
+  .logo__img {
+    width: 50px;
+    height: auto;
+  }
+  .header__menu {
+    margin-left: 40px;
+  }
+  .header__title {
+    font-size: 3.5rem;
+    line-height: 90%;
+
+    span {
+      font-size: 2.8rem;
+    }
+  }
+  .header__input {
+    font-size: 1.5rem;
+  }
+  //services
+  .services__item {
+    margin-bottom: 30px;
+  }
+  .services__btn {
+    width: 150px;
+    line-height: 40px;
+  }
+  //calculate
+  .calculate_left {
+    margin-bottom: 30px;
+  }
+  //portfolio
+  .portfolio__btn {
+    @include paddingsLR(15px);
+  }
+  //advantages
+  .advantages__item {
+    margin-bottom: 25px;
+  }
+  //team
+  .team__img {
+    max-width: 120px;
+  }
+  .team__item {
+    margin-bottom: 35px;
+  }
+  .team__quote::before,
+  .team__quote::after {
+    width: 35px;
+    height: 28px;
+  }
+  //blog
+  .blog__item {
+    margin-bottom: 30px;
+  }
+  .blog__img {
+    margin-bottom: 20px;
+  }
+  //contacts
+  .input__wrapper {
+    padding: 0 15px;
+  }
+  //footer
+  .footer__top {
+    padding-top: 30px;
+  }
+  .footer__bottom {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+  //footer
+  .footer_genesis {
+    padding-right: 130px;
+    &::after {
+      width: 120px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 7px;
+  }
+  .services,
+  .calculate,
+  .portfolio,
+  .team,
+  .contacts {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  //header
+  .logo__img {
+    width: 40px;
+    height: auto;
+  }
+  div.header__contact {
+    display: none !important;
+  }
+  .header__title {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    span {
+      font-size: 2.5rem;
+    }
+  }
+  .header__text {
+    margin-bottom: 40px;
+  }
+  .header__form_btn {
+    width: 100%;
+    max-width: 290px;
+    line-height: 50px;
+  }
+  .header__top {
+    padding-top: 30px;
+  }
+  //calculate
+  .calculate_left {
+    margin-bottom: 30px;
+  }
+  .plan__btn {
+    line-height: 35px;
+    font-size: 1.4rem;
+  }
+  //portfolio
+  .portfolio__btn {
+    line-height: 32px;
+    &:not(:first-child)::before {
+      display: none;
+    }
+  }
+  .portfolio__buttons {
+    border: none;
+    flex-wrap: wrap;
+  }
+  //interaction
+  .interaction__h3 {
+    @include paddingsTB(20px);
+  }
+  .interaction__img {
+    width: 80%;
+  }
+  //team
+  .team__items {
+    margin-bottom: 0;
+  }
+  .team__quote::before,
+  .team__quote::after {
+    width: 25px;
+    height: 20px;
+  }
+  //contacts
+  .contacts_left {
+    margin-bottom: 20px;
+  }
+  .contacts__button {
+    width: 180px;
+    line-height: 45px;
+  }
+  .contacts__input,
+  .contacts__textarea {
+    padding: 15px;
+  }
+  //map
+  .map {
+    height: 400px;
+    iframe {
+      height: 400px !important;
+    }
+  }
+  //footer
+  .footer_genesis {
+    padding-right: 100px;
+    &::after {
+      width: 90px;
+      height: 40px;
+    }
+  }
+}
+@media (max-width: 480px) {
+  .dropdown-menu {
+    background-color: rgba(#000, 0.9);
+  }
+  .dropdown-close {
+    width: 40%;
+  }
+  .dropdown-close__inner {
+    display: block;
+  }
+}

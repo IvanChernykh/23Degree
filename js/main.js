@@ -83,11 +83,9 @@ function showPortfolio() {
     changeCategory();
     for (let button of buttons) {
         button.addEventListener('click', function () {
-            for (let button of buttons) {
-                button.classList.remove('active');
-                this.classList.add('active');
-                changeCategory();
-            }
+            for (let button of buttons) button.classList.remove('active');
+            this.classList.add('active');
+            changeCategory();
         })
     }
     function changeCategory() {

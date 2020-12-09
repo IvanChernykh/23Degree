@@ -61,10 +61,6 @@
   border: 9px solid $mainColor;
   cursor: pointer;
 }
-@mixin btnTip {
-  opacity: 1;
-  transition: 0.5s 1s;
-}
 @mixin portfolioBtn {
   color: #fff;
   background-color: $mainColor;

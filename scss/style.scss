@@ -6,6 +6,7 @@ html {
 }
 body {
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 }
 * {
   box-sizing: border-box;
@@ -40,7 +41,8 @@ p {
     content: "";
     position: absolute;
     display: block;
-    width: 378px;
+    max-width: 378px;
+    width: 90%;
     height: 1px;
     left: 50%;
     background-color: $mainColor;
@@ -62,7 +64,10 @@ input {
 .dropdown-menu {
   position: fixed;
   z-index: 100;
+  top: 0;
+  left: 0;
   width: 0%;
+  min-width: 0;
   overflow: hidden;
   height: 100%;
   background-image: linear-gradient(
@@ -74,6 +79,9 @@ input {
   );
   transition: width, 0.2s;
 }
+.dropdown-menu.active {
+  width: 100%;
+}
 .dropdown-close {
   position: absolute;
   right: 0;
@@ -81,12 +89,35 @@ input {
   height: 100%;
   width: 65%;
 }
-.dropdown-menu.active {
-  width: 100%;
+.dropdown-close__inner {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  display: none;
+}
+.dropdown-close__btn {
+  width: 26px;
+  height: 4px;
+  background-color: #fff;
+  position: relative;
+  transform: rotate(45deg);
+  transform-origin: center;
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 4px;
+    height: 26px;
+    background-color: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
 }
 .nav_ul {
   padding: 60px 0;
   margin: 0;
+  max-width: 100%;
 }
 .nav__item {
   list-style-type: none;
@@ -98,6 +129,7 @@ input {
   z-index: 200;
   border-bottom: 1px solid transparent;
   justify-self: start;
+  white-space: nowrap;
   &:hover {
     border-color: #fff;
   }
@@ -112,17 +144,14 @@ input {
 .header__top {
   @include paddingsTB(45px, 30px);
 }
+.header__logo {
+  display: flex;
+  align-items: center;
+}
 .logo {
   @include fontProps(2.8rem, 900);
   position: relative;
-  padding-left: 70px;
-  &::before {
-    content: url(../img/header/logo.png);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  margin-left: 10px;
 }
 .header__phone {
   margin-right: 13px;
@@ -426,57 +455,6 @@ input {
   background-color: $mainColor;
   border-color: $mainColor;
 }
-.plan__btn_1:hover .btn__tip_1 {
-  @include btnTip;
-}
-.plan__btn_2:hover .btn__tip_2 {
-  @include btnTip;
-}
-.plan__btn_3:hover .btn__tip_3 {
-  @include btnTip;
-}
-.btn__tip {
-  position: absolute;
-  background-color: #fff;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  color: $gray;
-  width: 445px;
-  border-radius: 4px;
-  top: 130%;
-  pointer-events: none;
-  opacity: 0;
-  padding: 26px 30px;
-  &::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border: 25px solid transparent;
-    border-bottom: 25px solid #fff;
-    position: absolute;
-    top: -48px;
-  }
-}
-.btn__tip_1 {
-  left: 0;
-  &::before {
-    left: 68px;
-  }
-}
-.btn__tip_2 {
-  left: 50%;
-  transform: translateX(-50%);
-  &::before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-.btn__tip_3 {
-  right: 0;
-  &::before {
-    right: 68px;
-  }
-}
 //right
 .calculate_right {
   text-align: center;
@@ -656,6 +634,8 @@ div.interaction__item {
   img {
     border-radius: 50%;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 .team__name {
@@ -671,18 +651,24 @@ div.interaction__item {
   font-weight: 300;
   color: $gray;
   &::before {
-    content: url(../img/team/quote.png);
-    position: absolute;
     left: 0;
     top: 0;
   }
   &::after {
-    content: url(../img/team/quote.png);
-    position: absolute;
     right: 0;
     bottom: 0;
     transform: rotateY(180deg);
   }
+}
+.team__quote::before,
+.team__quote::after {
+  content: "";
+  background: url(../img/team/quote.png) no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 40px;
 }
 .quote__title {
   font-size: 3rem;
@@ -714,7 +700,8 @@ div.interaction__item {
 .blog__img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 30px;
+  display: block;
+  margin: 0 auto 30px;
 }
 .blog__link {
   @include fontProps(1.8rem, 300, $mainColor);
@@ -870,15 +857,21 @@ div.interaction__item {
 .footer__bottom {
   @include paddingsTB(45px, 55px);
   border-top: 1px solid #50504c;
+  /* flex-wrap: wrap; */
 }
 .footer_genesis {
   position: relative;
   padding-right: 135px;
   &::after {
-    content: url(../img/genesis-logo.png);
+    content: "";
+    background: url(../img/genesis-logo.png) no-repeat center center;
+    background-size: contain;
     position: absolute;
+    display: block;
+    width: 129px;
+    height: 50px;
     right: 0;
-    top: 50%;
+    top: 0;
     transform: translateY(-50%);
   }
 }

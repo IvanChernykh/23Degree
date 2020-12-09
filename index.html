@@ -13,11 +13,16 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
-    <div class="dropdown-menu">
-      <div class="dropdown-close"></div>
+    <div class="dropdown-menu active">
+      <div class="dropdown-close">
+        <div class="dropdown-close__inner">
+          <div class="dropdown-close__btn"></div>
+        </div>
+      </div>
       <div class="container">
         <nav class="nav">
           <ul class="nav_ul">
@@ -45,6 +50,7 @@
       <div class="container">
         <div class="header__top d-flex justify-content-between align-items-center">
           <div class="header__logo">
+            <img src="img/header/logo.png" alt="" class="logo__img" />
             <span class="logo">Degree</span>
           </div>
           <div class="header_right d-flex">
@@ -74,10 +80,14 @@
           </p>
         </div>
         <form action="" class="header__form">
-          <div class="row">
-            <input type="text" class="header__input col-lg-4" placeholder="Ваше имя" />
-            <input type="email" class="header__input col-lg-4" placeholder="E-mail" />
-            <input type="tel" class="header__input col-lg-4" placeholder="Номер телефона" />
+          <div class="row justify-content-center">
+            <input type="text" class="header__input col-lg-4 col-md-6" placeholder="Ваше имя" />
+            <input type="email" class="header__input col-lg-4 col-md-6" placeholder="E-mail" />
+            <input
+              type="tel"
+              class="header__input col-lg-4 col-md-6"
+              placeholder="Номер телефона"
+            />
             <div class="w-100"></div>
             <div class="form_bottom">
               <input type="submit" value="Оставить заявку!" class="header__form_btn btn" />
@@ -111,7 +121,7 @@
       <div class="container">
         <h2 class="section__title services__title">Наши услуги</h2>
         <div class="row">
-          <div class="col-md-6 services__item d-flex align-items-center">
+          <div class="col-md-6 order-1 order-md-1 services__item d-flex align-items-center">
             <div class="services__item_inner">
               <h3 class="services__h3">Дизайн интерьера</h3>
               <p class="services__text">
@@ -121,13 +131,13 @@
               <button class="services__btn btn">Оставить заявку</button>
             </div>
           </div>
-          <div class="col-md-6 services__item">
+          <div class="col-md-6 order-2 order-md-2 services__item">
             <img src="img/services/1.webp" alt="" class="services__img" />
           </div>
-          <div class="col-md-6 services__item">
+          <div class="col-md-6 order-4 order-md-3 services__item">
             <img src="img/services/2.webp" alt="" class="services__img" />
           </div>
-          <div class="col-md-6 services__item d-flex align-items-center">
+          <div class="col-md-6 order-3 order-md-4 services__item d-flex align-items-center">
             <div class="services__item_inner">
               <h3 class="services__h3">Дизайн экстерьера</h3>
               <p class="services__text">
@@ -138,7 +148,7 @@
               <button class="services__btn btn">Оставить заявку</button>
             </div>
           </div>
-          <div class="col-md-6 services__item d-flex align-items-center">
+          <div class="col-md-6 order-5 order-md-5 services__item d-flex align-items-center">
             <div class="services__item_inner">
               <h3 class="services__h3">Визуализация</h3>
               <p class="services__text">
@@ -149,7 +159,7 @@
               <button class="services__btn btn">Оставить заявку</button>
             </div>
           </div>
-          <div class="col-md-6 services__item">
+          <div class="col-md-6 order-6 order-md-6 services__item">
             <img src="img/services/3.webp" alt="" class="services__img" />
           </div>
         </div>
@@ -178,33 +188,9 @@
             <div class="calc__plan">
               <p class="plan__text">Выберите пакет:</p>
               <div class="plan__buttons d-flex justify-content-between">
-                <button class="plan__btn active plan__btn_1">
-                  Light
-                  <div class="btn__tip btn__tip_1">
-                    <p>
-                      План расстановки мебели 3D визуализация. Все рабочие чертежи (план полов, план
-                      потолка, развертки по стенам, план электросетей)
-                    </p>
-                  </div>
-                </button>
-                <button class="plan__btn plan__btn_2">
-                  Medium
-                  <div class="btn__tip btn__tip_2">
-                    <p>
-                      План расстановки мебели 3D визуализация. Все рабочие чертежи (план полов, план
-                      потолка, развертки по стенам, план электросетей)
-                    </p>
-                  </div>
-                </button>
-                <button class="plan__btn plan__btn_3">
-                  Full
-                  <div class="btn__tip btn__tip_3">
-                    <p>
-                      План расстановки мебели 3D визуализация. Все рабочие чертежи (план полов, план
-                      потолка, развертки по стенам, план электросетей)
-                    </p>
-                  </div>
-                </button>
+                <button class="plan__btn active plan__btn_1">Light</button>
+                <button class="plan__btn plan__btn_2">Medium</button>
+                <button class="plan__btn plan__btn_3">Full</button>
               </div>
             </div>
             <!-- calc__plan -->
@@ -402,28 +388,28 @@
       <div class="container">
         <h2 class="section__title interaction__title">Процесс взаимодействия</h2>
         <div class="row interaction-row">
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-sm-1 order-2 interaction__item">
             <img src="img/interaction/1.webp" alt="" class="interaction__img" />
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-sm-2 order-1 interaction__item">
             <h3 class="interaction__h3">Заполнение брифа</h3>
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-sm-3 order-3 interaction__item">
             <h3 class="interaction__h3">Исследование</h3>
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-4 interaction__item">
             <img src="img/interaction/2.webp" alt="" class="interaction__img" />
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-sm-5 order-6 interaction__item">
             <img src="img/interaction/3.webp" alt="" class="interaction__img" />
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-sm-6 order-5 interaction__item">
             <h3 class="interaction__h3">Идея</h3>
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-7 interaction__item">
             <h3 class="interaction__h3">Завершение</h3>
           </div>
-          <div class="col-sm-6 interaction__item">
+          <div class="col-sm-6 order-8 interaction__item">
             <img src="img/interaction/4.webp" alt="" class="interaction__img" />
           </div>
         </div>
@@ -597,7 +583,7 @@
       <div class="container">
         <div class="footer__top">
           <div class="row justify-content-between">
-            <div class="col-md-6 footer__left">
+            <div class="col-sm-8 sol-md-6 footer__left">
               <div class="row">
                 <div class="col-sm-2 col-4">
                   <ul class="footer_list">
@@ -619,7 +605,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-2 footer__right">
+            <div class="col-lg-2 col-sm-4 footer__right">
               <p class="footer__social">Мы в социальных сетях:</p>
               <div class="footer__social-links">
                 <a href="#" class="footer__facebook"> </a>
