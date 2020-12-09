@@ -6,7 +6,6 @@ function calculate() {
     let costValue = document.querySelector('.cost__value');
     let objectValue = document.querySelector('.object__value');
     let prices = [250, 500, 1050];
-
     function changeValue() {
         areaValue.innerHTML = String(slider.value * 100);
         if (buttons[0].classList.contains('active')) {
