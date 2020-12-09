@@ -1,4 +1,52 @@
 'use strict'
+function scroll(page, duration) {
+    let target = document.querySelector(page);
+    let startPosition = window.pageYOffset || window.scrollY;
+    let distance = target.getBoundingClientRect().top;
+    distance += 10;
+    let startTime = null;
+    function anim(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(anim);
+    }
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+    requestAnimationFrame(anim);
+};
+function headerScroll() {
+    let btn = document.querySelector('.header_button');
+    btn.addEventListener('click', function () { scroll('.services', 500); })
+}
+headerScroll();
+function dropDownMenu() {
+    let menuBtn = document.querySelector('.header__menu');
+    let menu = document.querySelector('.dropdown-menu');
+    let closeField = document.querySelector('.dropdown-close');
+    menuBtn.addEventListener('click', function () { menu.classList.add('active'); })
+    closeField.addEventListener('click', function () { closeMenu(); })
+    function closeMenu() { menu.classList.remove('active'); }
+    function menuScroll(button, target, scrollTime = 500) {
+        let btn = document.querySelector(button);
+        btn.addEventListener('click', function () {
+            closeMenu();
+            scroll(target, scrollTime)
+        })
+    }
+    menuScroll('.menu__link_services', '.services');
+    menuScroll('.menu__link_calc', '.calculate');
+    menuScroll('.menu__link_portfolio', '.portfolio', 600);
+    menuScroll('.menu__link_team', '.team', 900);
+    menuScroll('.menu__link_blog', '.blog', 1000);
+    menuScroll('.menu__link_contacts', '.contacts', 1000);
+}
+dropDownMenu();
 function calculate() {
     let buttons = document.querySelectorAll('.plan__btn');
     let slider = document.querySelector('.calc__range');
