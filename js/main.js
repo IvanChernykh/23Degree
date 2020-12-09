@@ -28,10 +28,17 @@ headerScroll();
 function dropDownMenu() {
     let menuBtn = document.querySelector('.header__menu');
     let menu = document.querySelector('.dropdown-menu');
-    let closeField = document.querySelector('.dropdown-close');
-    menuBtn.addEventListener('click', function () { menu.classList.add('active'); })
-    closeField.addEventListener('click', function () { closeMenu(); })
-    function closeMenu() { menu.classList.remove('active'); }
+    let closeFld = document.querySelector('.dropdown-close');
+    let body = document.querySelector('body');
+    menuBtn.addEventListener('click', function () {
+        menu.classList.add('active');
+        body.style.overflow = 'hidden'
+    })
+    closeFld.addEventListener('click', function () { closeMenu(); })
+    function closeMenu() {
+        menu.classList.remove('active');
+        body.style.overflow = 'auto';
+    }
     function menuScroll(button, target, scrollTime = 500) {
         let btn = document.querySelector(button);
         btn.addEventListener('click', function () {
@@ -50,20 +57,20 @@ dropDownMenu();
 function calculate() {
     let buttons = document.querySelectorAll('.plan__btn');
     let slider = document.querySelector('.calc__range');
-    let areaValue = document.querySelector('.area__value');
-    let costValue = document.querySelector('.cost__value');
-    let objectValue = document.querySelector('.object__value');
+    let areaVal = document.querySelector('.area__value');
+    let costVal = document.querySelector('.cost__value');
+    let objectVal = document.querySelector('.object__value');
     let prices = [250, 500, 1050];
     function changeValue() {
-        areaValue.innerHTML = String(slider.value * 100);
+        areaVal.innerHTML = String(slider.value * 100);
         if (buttons[0].classList.contains('active')) {
-            costValue.innerHTML = prices[0] * slider.value + ' ';
+            costVal.innerHTML = prices[0] * slider.value + ' ';
         } else if (buttons[1].classList.contains('active')) {
-            costValue.innerHTML = prices[1] * slider.value + ' ';
+            costVal.innerHTML = prices[1] * slider.value + ' ';
         } else if (buttons[2].classList.contains('active')) {
-            costValue.innerHTML = prices[2] * slider.value + ' ';
+            costVal.innerHTML = prices[2] * slider.value + ' ';
         }
-        objectValue.innerHTML = costValue.innerHTML * 11 + ' ';
+        objectVal.innerHTML = costVal.innerHTML * 11 + ' ';
     }
     slider.oninput = function () { changeValue(); }
     for (let button of buttons) {
@@ -103,10 +110,10 @@ function showPortfolio() {
 }
 showPortfolio();
 function companiesSlider() {
-    let slider = document.querySelector('.companies__slider-range');
+    let sl = document.querySelector('.companies__slider-range');
     let slides = document.querySelector('.companies__slides');
-    slider.addEventListener('input', function () {
-        slides.style.transform = `translateX(-${slider.value * (slides.scrollWidth - slides.clientWidth) / 100}px)`;
+    sl.addEventListener('input', function () {
+        slides.style.transform = `translateX(-${sl.value * (slides.scrollWidth - slides.clientWidth) / 100}px)`;
     })
 };
 companiesSlider();
