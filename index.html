@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -141,7 +142,7 @@
             <div class="calc__slider">
               <p class="calc__text">Площадь помещения:</p>
               <div class="calc__bar">
-                <input type="range" class="calc__range" value="0" />
+                <input type="range" class="calc__range" value="1" min="1" />
                 <div class="calc__point calc__point_1"></div>
                 <div class="calc__point calc__point_2"></div>
                 <div class="calc__point calc__point_3"></div>
@@ -152,7 +153,7 @@
             <div class="calc__plan">
               <p class="plan__text">Выберите пакет:</p>
               <div class="plan__buttons d-flex justify-content-between">
-                <button class="plan__btn plan__btn_1">
+                <button class="plan__btn active plan__btn_1">
                   Light
                   <div class="btn__tip btn__tip_1">
                     <p>
@@ -185,11 +186,11 @@
           </div>
           <div class="col-lg-5 calculate_right">
             <p class="calculate__text">Площадь помещения:</p>
-            <span class="calculate__value">1 000м<sup>2</sup></span>
+            <span class="calculate__value"><span class="area__value">100</span>м<sup>2</sup></span>
             <p class="calculate__text">Средняя стоимость м<sup>2</sup>:</p>
-            <span class="calculate__value">4 850 грн.</span>
+            <span class="calculate__value"><span class="cost__value">250</span> грн.</span>
             <p class="calculate__text">Средняя стоимость объекта:</p>
-            <span class="calculate__value">48 500 грн.</span>
+            <span class="calculate__value"><span class="object__value">2750</span> грн.</span>
             <button class="calculate__button btn">Получить консультацию специалиста</button>
             <p class="calculate__phone">
               или позвоните нам по телефону: <br /><span>050 123 45 67</span>

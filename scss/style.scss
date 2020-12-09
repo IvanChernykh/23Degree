@@ -321,14 +321,14 @@ input {
 .calc__point_2 {
   left: 33%;
   &::before {
-    content: "10 000м\00B2";
+    content: "3 400м\00B2";
     transform: translateX(-35%);
   }
 }
 .calc__point_3 {
   left: 66%;
   &::before {
-    content: "250 000м\00B2";
+    content: "6 900м\00B2";
     transform: translateX(-30%);
   }
 }
@@ -336,7 +336,7 @@ input {
   right: 0;
   &::before {
     right: 0;
-    content: "500 000м\00B2";
+    content: "10 000м\00B2";
   }
 }
 .calc__range {
@@ -376,6 +376,10 @@ input {
     background-color: $mainColor;
     border-color: $mainColor;
   }
+}
+.plan__btn.active {
+  background-color: $mainColor;
+  border-color: $mainColor;
 }
 .plan__btn_1:hover .btn__tip_1 {
   @include btnTip;
